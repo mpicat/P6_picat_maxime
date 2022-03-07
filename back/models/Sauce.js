@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// création de schema de données via la méthode Schema (modèle de données utilisable par mongoDB) de mongoose
+// création de schema : modèle de données utilisable par mongoDB
 // mongoDB génère automatiquement des identifiants
 const sauceSchema = mongoose.Schema({
     userId: {type: String, required: true},
@@ -13,8 +13,7 @@ const sauceSchema = mongoose.Schema({
     likes: {type: Number, default: 0},
     dislikes: {type: Number, default: 0},
     usersLiked: {type: [String], default: []},
-    usersDisLiked: {type: [String], default: []}
+    usersDisliked: {type: [String], default: []}
 });
 
-// export du schema via la méthode model
 module.exports = mongoose.model('Sauce', sauceSchema);
